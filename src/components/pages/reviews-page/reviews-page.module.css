@@ -1,0 +1,19 @@
+.container {
+    width: 376px;
+    margin: 0 auto;
+    background: #F8F8F8;
+}
+
+.contentContainer {
+    padding: 0 16px;
+    padding-top: 32px;
+    padding-bottom: 97px;
+}
+
+.title {
+    margin:0;
+    margin-bottom:27px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #F56A3F;
+}

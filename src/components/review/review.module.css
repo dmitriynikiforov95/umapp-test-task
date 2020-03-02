@@ -1,0 +1,32 @@
+.container {
+    padding: 16px 0;
+    padding-right: 16px;
+    border-top: 1px solid #D9D9D9;
+    border-bottom: 1px solid #D9D9D9;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.author {
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    color: #000000;
+}
+
+.date {
+    font-size: 11px;
+    line-height: 13px;
+    text-align: right;
+    color: #A79595;
+}
+
+.message {
+    margin: 0;
+    font-size: 11px;
+    line-height: 13px;
+    color: #000000;
+}
