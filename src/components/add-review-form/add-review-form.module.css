@@ -1,0 +1,58 @@
+.reviewTextFieldWrapper {
+    position: relative;
+    margin-bottom:16px;
+}
+
+.reviewTextFieldHint {
+    position: absolute;
+    right: 16px;
+    bottom: 16px;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: right;
+    color: #FF6969;
+}
+
+.nickNameField {
+    width: 344px;
+    height: 48px;
+    padding: 16px 16px;
+    background: #FFFFFF;
+    border: 1px solid #D9D9D9;
+    border-radius: 8px;
+}
+
+.reviewTextField {
+    min-width: 344px;
+    min-height: 160px;
+    padding: 0 16px;
+    padding-top: 15px;
+    background: #FFFFFF;
+    border: 1px solid #D9D9D9;
+    border-radius: 8px;
+    resize: none;
+}
+
+::-webkit-input-placeholder {
+    font-size: 14px;
+    line-height: 16px;
+    color: #C4C4C4;
+}
+
+::-moz-placeholder {
+    font-size: 14px;
+    line-height: 16px;
+    color: #C4C4C4;
+}
+
+:-moz-placeholder {
+    font-size: 14px;
+    line-height: 16px;
+    color: #C4C4C4;
+}
+
+:-ms-input-placeholder {
+    font-size: 14px;
+    line-height: 16px;
+    color: #C4C4C4;
+}

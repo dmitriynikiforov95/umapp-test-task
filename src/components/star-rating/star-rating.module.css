@@ -9,6 +9,13 @@
     margin-bottom: 8px;
 }
 
+.listInsideForm {
+    max-width: 196px;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 16px;
+}
+
 .active {
     fill: #F56A3F
 }

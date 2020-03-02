@@ -2,15 +2,15 @@ import React from "react";
 
 import s from "./star-rating.module.css";
 
-const StarRating = ({ selectedStarsQuantity}) => {
+const StarRating = ({ selectedStarsQuantity, isInsideReviewForm}) => {
   const starsQuantity = 5;
   return (
-    <ul className={s.list}>
+    <ul className={isInsideReviewForm ? s.list + " " + s.listInsideForm : s.list }>
       {[...new Array(starsQuantity)].map((item, idx) => (
         <li key={idx}>
           <svg
-            width="20"
-            height="20"
+             width={isInsideReviewForm ? "36" : "20"}
+             height={isInsideReviewForm ? "36" : "20"}
             viewBox="0 0 20 20"
             xmlns="http://www.w3.org/2000/svg"
           >

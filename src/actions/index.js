@@ -5,6 +5,22 @@ const getReviews = (newReviews) => {
     }
 }
 
+const changeCurrentReviewAuthor = (author) => {
+    return {
+        type: "CURRENT_REVIEW_AUTHOR_CHANGED",
+        payload:author
+    }
+}
+
+const changeCurrentReviewMessage = (message) => {
+    return {
+        type: "CURRENT_REVIEW_MESSAGE_CHANGED",
+        payload:message
+    }
+}
+
 export {
-    getReviews
+    getReviews,
+    changeCurrentReviewAuthor,
+    changeCurrentReviewMessage
 }

@@ -7,14 +7,20 @@
 
 .contentContainer {
     padding: 0 16px;
-    padding-top: 32px;
-    padding-bottom: 97px;
+    padding-top: 36px;
+    padding-bottom: 82px;
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
 }
 
 .title {
-    margin:0;
-    margin-bottom:27px;
+    margin: 0 auto;
     font-weight: bold;
     font-size: 14px;
-    color: #F56A3F;
+    line-height: 16px;
+    text-align: center;
+    color: #000000;
 }

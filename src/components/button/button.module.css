@@ -7,11 +7,18 @@
     border-radius: 8px;
 }
 
-
 .btnText {
     font-weight: bold;
     font-size: 14px;
     line-height: 16px;
     text-align: center;
     color: #000000;
+}
+
+.btnDisabled {
+    background: #EBEBE4;
+}
+
+.btnTextDisabled {
+    color: rgb(84, 84, 84)
 }
