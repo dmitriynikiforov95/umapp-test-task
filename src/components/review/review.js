@@ -2,17 +2,18 @@ import React from "react";
 import StarRating from "../star-rating/";
 import s from "./review.module.css"
 
-const Review = () => {
+const Review = ({ review }) => {
+  const { id, author, date, reviewMessage, selectedStarsQuantity } = review;
   return (
-    <li>
+    <li key={id}>
       <div className={s.container}>
         <div className={s.wrapper}>
-          <b className={s.author}>Nickname</b>
-          <span className={s.date}>24.09.2019</span>
+          <b className={s.author}>{author}</b>
+          <span className={s.date}>{date}</span>
         </div>
-        <StarRating starsSelectedQuantity={5}/>
+        <StarRating selectedStarsQuantity={selectedStarsQuantity}  published={true}/>
         <p className={s.message}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.
+          {reviewMessage}
         </p>
       </div>
     </li>

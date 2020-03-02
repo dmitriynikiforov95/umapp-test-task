@@ -2,7 +2,7 @@ import React from "react";
 
 import s from "./star-rating.module.css";
 
-const StarRating = ({ starsSelectedQuantity}) => {
+const StarRating = ({ selectedStarsQuantity}) => {
   const starsQuantity = 5;
   return (
     <ul className={s.list}>
@@ -16,7 +16,7 @@ const StarRating = ({ starsSelectedQuantity}) => {
           >
             <path
              className={
-              idx + 1 <= starsSelectedQuantity
+              idx + 1 <= selectedStarsQuantity
                 ? s.active
                 : s.nonActive
             }

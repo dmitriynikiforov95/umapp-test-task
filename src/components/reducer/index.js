@@ -1,5 +1,11 @@
 const initialState = {
-    reviews: []
+    reviews: [],
+    currentReview: {
+      author:"",
+      message:"",
+      date:"",
+      selectedStarsQuantity:null,
+    }
   };
   
   const reducer = (state = initialState, action) => {
