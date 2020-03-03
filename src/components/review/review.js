@@ -3,17 +3,17 @@ import StarRating from "../star-rating/";
 import s from "./review.module.css"
 
 const Review = ({ review }) => {
-  const { id, author, date, reviewMessage, selectedStarsQuantity } = review;
+  const {author, date, message, selectedStarsQuantity } = review;
   return (
-    <li key={id}>
+    <li>
       <div className={s.container}>
         <div className={s.wrapper}>
           <b className={s.author}>{author}</b>
           <span className={s.date}>{date}</span>
         </div>
-        <StarRating selectedStarsQuantity={selectedStarsQuantity}  published={true}/>
+        <StarRating selectedStarsQuantity={selectedStarsQuantity}/>
         <p className={s.message}>
-          {reviewMessage}
+          {message}
         </p>
       </div>
     </li>

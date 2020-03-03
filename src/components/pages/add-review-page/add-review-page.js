@@ -1,14 +1,16 @@
 import React from "react";
-import {Link} from 'react-router-dom';
+import { connect } from "react-redux";
+import { Link } from "react-router-dom";
+import { clearAddReviewFormFields } from "../../../actions";
 import AddReviewForm from "../../add-review-form";
 import s from "./add-review-page.module.css";
 
-const AddReviewPage = () => {
+const AddReviewPage = ({ clearAddReviewFormFields }) => {
   return (
     <div className={s.container}>
       <div className={s.contentContainer}>
-      <div className={s.wrapper}>
-          <Link to="/">
+        <div className={s.wrapper}>
+          <Link to="/" onClick={clearAddReviewFormFields}>
             <svg
               width="19"
               height="18"
@@ -25,11 +27,18 @@ const AddReviewPage = () => {
             </svg>
           </Link>
           <h2 className={s.title}>Оценить</h2>
-          </div>
+        </div>
         <AddReviewForm />
       </div>
     </div>
   );
 };
 
-export default AddReviewPage;
+const mapDispatchToProps = {
+  clearAddReviewFormFields
+};
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(AddReviewPage);

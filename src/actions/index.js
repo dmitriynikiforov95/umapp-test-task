@@ -19,8 +19,33 @@ const changeCurrentReviewMessage = (message) => {
     }
 }
 
+const changeCurrentReviewSelectedStarsQuantity = (selectedStarsQuantity) => {
+    return {
+        type: "CURRENT_REVIEW_SELECTED_STARS_QUANTITY_CHANGED",
+        payload:selectedStarsQuantity
+    }
+}
+
+const addNewReview = (newReview) => {
+    return {
+        type: "NEW_REVIEW_ADDED",
+        payload:newReview
+    }
+}
+
+const clearAddReviewFormFields = () => {
+    return {
+        type: "SELECTED-PAGE_CHANGED",
+    }
+}
+
 export {
     getReviews,
+    
     changeCurrentReviewAuthor,
-    changeCurrentReviewMessage
+    changeCurrentReviewMessage,
+    changeCurrentReviewSelectedStarsQuantity,
+
+    addNewReview,
+    clearAddReviewFormFields
 }
