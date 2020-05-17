@@ -1,83 +1,40 @@
 import React from "react";
 import StarRating from "../star-rating/";
-import { connect } from "react-redux";
-
-import { withRouter} from "react-router-dom";
-
-import {
-  changeCurrentReviewAuthor,
-  changeCurrentReviewMessage,
-  changeCurrentReviewSelectedStarsQuantity,
-  addNewReview
-} from "../../actions";
 
 import Button from "../button";
 import s from "./add-review-form.module.css";
 
 
 const AddReviewForm = ({
-  currentReview,
-  changeCurrentReviewAuthor,
-  changeCurrentReviewMessage,
-  changeCurrentReviewSelectedStarsQuantity,
-  addNewReview,
-  history
+  handleSubmit, currentReview, handleInputChange, selectedStarsQuantity, setSelectedStarsQuantity
 }) => {
-  const { author, message, selectedStarsQuantity } = currentReview;
-
-  const toSubmit = e => {
-    e.preventDefault();
-
-    let currentDate = new Date();
-
-    function formatDate(date) {
-      let dd = date.getDate();
-      if (dd < 10) dd = "0" + dd;
-
-      let mm = date.getMonth() + 1;
-      if (mm < 10) mm = "0" + mm;
-
-      let yy = date.getFullYear() % 100;
-      if (yy < 10) yy = "0" + yy;
-
-      return dd + "." + mm + "." + yy + yy;
-    }
-
-    const newReview = {
-      selectedStarsQuantity,
-      date: formatDate(currentDate),
-      author,
-      message
-    };
-
-    addNewReview(newReview);
-    history.push('/');
-  };
-
+  const { author, message } = currentReview;
   return (
-    <form name="form1" action="" method="post" onSubmit={toSubmit}>
+    <form name="form1" action="" method="post" onSubmit={handleSubmit}>
       <StarRating
         selectedStarsQuantity={selectedStarsQuantity}
         isInsideReviewForm={true}
         changeCurrentReviewSelectedStarsQuantity={
-          changeCurrentReviewSelectedStarsQuantity
+          setSelectedStarsQuantity
         }
       />
       <p>
         <input
+          name="author"
           type="text"
           placeholder="Укажите вам никнейм"
           value={author}
           className={s.nickNameField}
-          onChange={e => changeCurrentReviewAuthor(e.target.value)}
+          onChange={e => handleInputChange(e)}
         />
       </p>
       <div className={s.reviewTextFieldWrapper}>
         <textarea
+          name="message"
           value={message}
           placeholder="Расскажите, что можно улучшить?"
           className={s.reviewTextField}
-          onChange={e => changeCurrentReviewMessage(e.target.value)}
+          onChange={e => handleInputChange(e)}
         ></textarea>
         {message.length === 0 ? (
           <span className={s.reviewTextFieldHint}>Минимум 20 символов</span>
@@ -92,20 +49,4 @@ const AddReviewForm = ({
   );
 };
 
-const mapStateToProps = ({ currentReview }) => {
-  return {
-    currentReview
-  };
-};
-
-const mapDispatchToProps = {
-  changeCurrentReviewAuthor,
-  changeCurrentReviewMessage,
-  changeCurrentReviewSelectedStarsQuantity,
-  addNewReview
-};
-
-export default withRouter(connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(AddReviewForm));
+export default AddReviewForm;

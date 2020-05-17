@@ -1,13 +1,16 @@
 import React from "react";
-import DataGettingContainer from "../../containers/data-getting-container";
+import { Switch, Route } from "react-router-dom";
+import ReviewsPage from "../pages/reviews-page";
+import AddReviewPage from "../pages/add-review-page";
 
 import "./app.css";
 
 const App = () => {
   return (
-    <div>
-      <DataGettingContainer />
-    </div>
+    <Switch>
+      <Route path="/" exact component={ReviewsPage} />
+      <Route path="/add-review-page" component={AddReviewPage} />
+    </Switch>
   );
 };
 
