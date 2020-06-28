@@ -2,20 +2,18 @@ import React from "react";
 import {Link} from 'react-router-dom';
 
 import Button from "../../button";
-import ReviewListContainer from "../../../containers/review-list-container";
+import ReviewList from "../../review-list";
 import s from "./reviews-page.module.css";
 
-const ReviewsPage = (props) => {
+const ReviewsPage = ({reviews}) => {
 
   return (
     <div className={s.container}>
-      <div className={s.contentContainer}>
         <h2 className={s.title}>Отзывы магазина</h2>
-        <Link to="/add-review-page">
+        <Link to="/umapp/add-review-page">
         <Button text="Написать отзыв"/>
         </Link>
-        <ReviewListContainer />
-      </div>
+        <ReviewList reviews={reviews}/>
     </div>
   );
 };

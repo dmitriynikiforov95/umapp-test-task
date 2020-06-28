@@ -5,6 +5,10 @@
     background: #FFFFFF;
     border: 1px solid #D9D9D9;
     border-radius: 8px;
+    cursor: pointer;
+    outline: none;
+    transition: all;
+    transition-duration: 0.5s;
 }
 
 .btnText {
@@ -17,6 +21,7 @@
 
 .btnDisabled {
     background: #EBEBE4;
+    cursor: not-allowed;
 }
 
 .btnTextDisabled {

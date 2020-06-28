@@ -1,7 +1,7 @@
 .list {
     display: flex;
     justify-content: space-between;
-    max-width: 136px;
+    width: 136px;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -10,12 +10,15 @@
 }
 
 .listInsideForm {
-    max-width: 196px;
+    width: 196px;
     margin: 0 auto;
     margin-top: 20px;
     margin-bottom: 16px;
 }
 
+.listInsideForm  .star {
+    cursor: pointer;
+}
 .active {
     fill: #F56A3F
 }

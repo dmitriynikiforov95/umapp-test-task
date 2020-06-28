@@ -11,5 +11,5 @@ function formatDate(date) {
 }
 
 export {
-    formatDate
+    formatDate,
 }

@@ -1,14 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import AddReviewFormContainer from "../../../containers/add-review-form-container";
 import s from "./add-review-page.module.css";
+import AddReviewForm from './../../add-review-form/index';
 
-const AddReviewPage = () => {
+const AddReviewPage = (props) => {
   return (
     <div className={s.container}>
-      <div className={s.contentContainer}>
-        <div className={s.linkAndTitleContainer}>
-          <Link to="/">
+        <div className={s.header}>
+          <Link to="/umapp">
             <svg
               width="19"
               height="18"
@@ -26,8 +25,7 @@ const AddReviewPage = () => {
           </Link>
           <h2 className={s.title}>Оценить</h2>
         </div>
-        <AddReviewFormContainer />
-      </div>
+        <AddReviewForm {...props} />
     </div>
   );
 };

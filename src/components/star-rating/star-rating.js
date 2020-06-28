@@ -1,5 +1,5 @@
 import React from "react";
-
+import classNames from "classnames/bind";
 import s from "./star-rating.module.css";
 
 const StarRating = ({
@@ -8,12 +8,19 @@ const StarRating = ({
   changeCurrentReviewSelectedStarsQuantity
 }) => {
   const starsQuantity = 5;
+  
+  const cx = classNames.bind(s);
+
   return (
     <ul
-      className={isInsideReviewForm ? s.list + " " + s.listInsideForm : s.list}
+      className={cx({
+        list: true,
+        listInsideForm: isInsideReviewForm
+      })}
     >
       {[...new Array(starsQuantity)].map((item, idx) => (
         <li
+        className={s.star}
           key={idx}
           onClick={
             isInsideReviewForm

@@ -2,16 +2,13 @@
     width: 376px;
     margin: 0 auto;
     margin-top: 30px;
-    background: #F8F8F8;
-}
-
-.contentContainer {
     padding: 0 16px;
     padding-top: 36px;
     padding-bottom: 82px;
+    background: #F8F8F8;
 }
 
-.linkAndTitleContainer {
+.header {
     display: flex;
     align-items: center;
 }
@@ -19,8 +16,8 @@
 .title {
     margin: 0 auto;
     font-weight: bold;
-    font-size: 14px;
-    line-height: 16px;
+    font-size: inherit;
+    line-height: inherit;
     text-align: center;
     color: #000000;
 }

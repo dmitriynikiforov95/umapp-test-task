@@ -1,19 +1,27 @@
 import React from "react";
-
+import classNames from "classnames/bind";
 import s from "./button.module.css";
 
-const Button = ({ text, isDisabled, submit }) => {
-  const btnClazz = !isDisabled ? s.btn : s.btn + " " + s.btnDisabled;
-  const textClazz = !isDisabled
-    ? s.btnText
-    : s.btnText + " " + s.btnTextDisabled;
+const Button = ({ text, isDisabled, isInsideReviewForm }) => {
+  const cx = classNames.bind(s);
+
   return (
     <button
-      type={submit ? "submit" : "button"}
-      className={btnClazz}
+      type={isInsideReviewForm ? "submit" : "button"}
+      className={cx({
+        btn: true,
+        btnDisabled: isDisabled && isInsideReviewForm,
+      })}
       disabled={isDisabled}
     >
-      <span className={textClazz}>{text}</span>
+      <span
+        className={cx({
+          btnText: true,
+          btnTextDisabled: isDisabled && isInsideReviewForm,
+        })}
+      >
+        {text}
+      </span>
     </button>
   );
 };

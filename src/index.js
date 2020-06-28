@@ -1,24 +1,18 @@
+import 'react-app-polyfill/ie9';
+import 'react-app-polyfill/ie11';
+import 'react-app-polyfill/stable';
+
 import React from "react";
 import ReactDOM from "react-dom";
-import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 
-import { ReviewsApiProvider } from "./components/reviews-api-context";
-import ReviewsApiService from "./services/reviews-api-service";
 import App from "./components/app/app";
-import ErrorBoundry from "./components/error-boundry"
-import store from "./store";
-
-const reviewsApiService = new ReviewsApiService();
+import ErrorBoundary from "./components/error-boundary";
 
 ReactDOM.render(
-  <Provider store={store}>
-    <ErrorBoundry>
-      <ReviewsApiProvider value={reviewsApiService}>
+    <ErrorBoundary>
         <BrowserRouter>
           <App />
         </BrowserRouter>
-      </ReviewsApiProvider>
-    </ErrorBoundry>
-  </Provider>,
+    </ErrorBoundary>,
   document.getElementById("root"))
