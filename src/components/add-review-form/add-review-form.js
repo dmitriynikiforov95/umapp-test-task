@@ -8,22 +8,22 @@ import s from "./add-review-form.module.css";
 const AddReviewForm = ({ reviews, addNewReview, history }) => {
   const [currentReview, setCurrentReview] = useState({
     author: "",
-    review: "",
+    message: "",
   });
 
-  const [disabled, setDisabled] = useState({
+  const [formFieldsDisabled, setDisabled] = useState({
     isAuthorFieldDisabled: true,
-    isReviewFieldDisabled: true,
+    isMessageFieldDisabled: true,
   });
 
   const [selectedStarsQuantity, setSelectedStarsQuantity] = useState(null);
 
   const isFirstRender = useRef(true);
 
-  const { author, review } = currentReview;
-  const { isAuthorFieldDisabled, isReviewFieldDisabled } = disabled;
+  const { author, message } = currentReview;
+  const { isAuthorFieldDisabled, isMessageFieldDisabled } = formFieldsDisabled;
 
-  const isFormDisabled = Object.values(disabled).includes(true);
+  const isFormDisabled = Object.values(formFieldsDisabled).includes(true);
 
   useEffect(() => {
     if (isFirstRender.current) {
@@ -32,7 +32,7 @@ const AddReviewForm = ({ reviews, addNewReview, history }) => {
     }
 
     setDisabled(formValidation());
-  }, [author, review]);
+  }, [author, message]);
 
   const handleInputChange = ({ target }) => {
     const { name, value } = target;
@@ -55,12 +55,12 @@ const AddReviewForm = ({ reviews, addNewReview, history }) => {
     const currentDate = new Date().getTime();
 
     const newReview = {
-      ...currentReview,
       author: author.trim(),
-      message: review.trim(),
+      message: message.trim(),
       selectedStarsQuantity,
       date: currentDate,
     };
+
     const newReviews = [newReview, ...reviews];
 
     localStorage.setItem("reviews", JSON.stringify(newReviews));
@@ -80,12 +80,12 @@ const AddReviewForm = ({ reviews, addNewReview, history }) => {
       disabled.isAuthorFieldDisabled = false;
     }
 
-    if (review.trim() === "") {
-      disabled.isReviewFieldDisabled = true;
-    } else if (review.trim().length <= 20 || review.trim().length >= 500) {
-      disabled.isReviewFieldDisabled = true;
+    if (message.trim() === "") {
+      disabled.isMessageFieldDisabled = true;
+    } else if (message.trim().length <= 20 || message.trim().length >= 500) {
+      disabled.isMessageFieldDisabled = true;
     } else {
-      disabled.isReviewFieldDisabled = false;
+      disabled.isMessageFieldDisabled = false;
     }
 
     return disabled;
@@ -124,21 +124,21 @@ const AddReviewForm = ({ reviews, addNewReview, history }) => {
       </p>
       <div className={s.fieldWrapper}>
         <textarea
-          name="review"
-          value={review}
+          name="message"
+          value={message}
           placeholder="Расскажите, что можно улучшить?"
           className={cx({
             field: true,
             reviewTextField: true,
-            valid: !isReviewFieldDisabled,
-            invalid: isReviewFieldDisabled,
+            valid: !isMessageFieldDisabled,
+            invalid: isMessageFieldDisabled,
           })}
           onChange={(e) => handleInputChange(e)}
         ></textarea>
         <span
           className={cx({
             fieldHint: true,
-            hintHidden: review.length,
+            hintHidden: message.length,
           })}
         >
           От 20 до 500 симолов
