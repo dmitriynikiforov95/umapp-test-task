@@ -1,74 +1,72 @@
 .fieldWrapper {
-    position: relative;
-    margin:0;
-    margin-bottom:16px;
+  position: relative;
+  margin: 0;
+  margin-bottom: 16px;
 }
 
-
 .field {
-    width: 344px;
-    padding: 16px 16px;
-    background: #FFFFFF;
-    border: 1px solid #D9D9D9;
-    border-radius: 8px;
-    outline-color: none;
+  width: 344px;
+  padding: 16px 16px;
+  background: #ffffff;
+  border: 1px solid #d9d9d9;
+  border-radius: 8px;
+  outline-color: none;
 }
 
 .reviewTextField {
-    min-height: 160px;
-    resize: none;
-    outline-color: none;
-    word-wrap: break-word;
+  min-height: 160px;
+  resize: none;
+  outline-color: none;
+  word-wrap: break-word;
 }
 
 .fieldHint {
-    position: absolute;
-    right: 16px;
-    bottom: 16px;
-    font-size: 12px;
-    line-height: 14px;
-    color: #FF6969;
-    opacity:1;
-    transform: translateX(0) scale(1);
-    transition-property: opacity, transform;
-    transition-duration: 0.4s, 0.4s;
-    transition-timing-function: ease-out, ease-out;
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  font-size: 12px;
+  line-height: 14px;
+  color: #ff6969;
+  opacity: 1;
+  transform: translateX(0) scale(1);
+  transition-property: opacity, transform;
+  transition-duration: 0.4s, 0.4s;
+  transition-timing-function: ease-out, ease-out;
 }
 
 .hintHidden {
-    opacity: 0;
-    overflow: hidden; 
-    transform: translateX(60px) scale(0);
+  opacity: 0;
+  overflow: hidden;
+  transform: translateX(60px) scale(0);
 }
 
 .invalid {
-    outline-color:#A62222;
+  outline-color: #a62222;
 }
 .valid {
-    outline-color: #54CC54
+  outline-color: #54cc54;
 }
 
-
 ::-webkit-input-placeholder {
-    font-size: 14px;
-    line-height: 16px;
-    color: #C4C4C4;
+  font-size: 14px;
+  line-height: 16px;
+  color: #c4c4c4;
 }
 
 ::-moz-placeholder {
-    font-size: 14px;
-    line-height: 16px;
-    color: #C4C4C4;
+  font-size: 14px;
+  line-height: 16px;
+  color: #c4c4c4;
 }
 
 :-moz-placeholder {
-    font-size: 14px;
-    line-height: 16px;
-    color: #C4C4C4;
+  font-size: 14px;
+  line-height: 16px;
+  color: #c4c4c4;
 }
 
 :-ms-input-placeholder {
-    font-size: 14px;
-    line-height: 16px;
-    color: #C4C4C4;
+  font-size: 14px;
+  line-height: 16px;
+  color: #c4c4c4;
 }

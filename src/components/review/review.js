@@ -1,10 +1,10 @@
-import React, {useMemo} from "react";
-import {formatDate} from "../../helpers";
+import React, { useMemo } from "react";
+import { formatDate } from "../../helpers";
 import StarRating from "../star-rating/";
-import s from "./review.module.css"
+import s from "./review.module.css";
 
 const Review = ({ review }) => {
-  const {author, date, message, selectedStarsQuantity } = review;
+  const { author, date, message, selectedStarsQuantity } = review;
 
   const memoizedFormatedDate = useMemo(() => formatDate(date), [date]);
 
@@ -15,10 +15,8 @@ const Review = ({ review }) => {
           <b>{author}</b>
           <span className={s.date}>{memoizedFormatedDate}</span>
         </p>
-        <StarRating selectedStarsQuantity={selectedStarsQuantity}/>
-        <p className={s.message}>
-          {message}
-        </p>
+        <StarRating selectedStarsQuantity={selectedStarsQuantity} />
+        <p className={s.message}>{message}</p>
       </div>
     </li>
   );

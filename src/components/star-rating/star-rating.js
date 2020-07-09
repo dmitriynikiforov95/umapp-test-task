@@ -5,22 +5,22 @@ import s from "./star-rating.module.css";
 const StarRating = ({
   selectedStarsQuantity,
   isInsideReviewForm,
-  changeCurrentReviewSelectedStarsQuantity
+  changeCurrentReviewSelectedStarsQuantity,
 }) => {
   const starsQuantity = 5;
-  
+
   const cx = classNames.bind(s);
 
   return (
     <ul
       className={cx({
         list: true,
-        listInsideForm: isInsideReviewForm
+        listInsideForm: isInsideReviewForm,
       })}
     >
       {[...new Array(starsQuantity)].map((item, idx) => (
         <li
-        className={s.star}
+          className={s.star}
           key={idx}
           onClick={
             isInsideReviewForm

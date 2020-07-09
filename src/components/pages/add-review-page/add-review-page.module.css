@@ -1,23 +1,23 @@
 .container {
-    width: 376px;
-    margin: 0 auto;
-    margin-top: 30px;
-    padding: 0 16px;
-    padding-top: 36px;
-    padding-bottom: 82px;
-    background: #F8F8F8;
+  width: 376px;
+  margin: 0 auto;
+  margin-top: 30px;
+  padding: 0 16px;
+  padding-top: 36px;
+  padding-bottom: 82px;
+  background: #f8f8f8;
 }
 
 .header {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .title {
-    margin: 0 auto;
-    font-weight: bold;
-    font-size: inherit;
-    line-height: inherit;
-    text-align: center;
-    color: #000000;
+  margin: 0 auto;
+  font-weight: bold;
+  font-size: inherit;
+  line-height: inherit;
+  text-align: center;
+  color: #000000;
 }

@@ -37,12 +37,10 @@ const AddReviewForm = ({ reviews, addNewReview, history }) => {
   const handleInputChange = ({ target }) => {
     const { name, value } = target;
 
-    setCurrentReview((currentReview) => {
-      return {
-        ...currentReview,
-        [name]: value,
-      };
-    });
+    setCurrentReview((currentReview) => ({
+      ...currentReview,
+      [name]: value,
+    }));
   };
 
   const handleSubmit = (e) => {

@@ -1,17 +1,17 @@
 .container {
-    width: 376px;
-    margin: 30px auto;
-    min-height:530px;
-    padding: 0 16px;
-    padding-top: 32px;
-    padding-bottom: 97px;
-    background: #F8F8F8;
+  width: 376px;
+  margin: 30px auto;
+  min-height: 530px;
+  padding: 0 16px;
+  padding-top: 32px;
+  padding-bottom: 97px;
+  background: #f8f8f8;
 }
 
 .title {
-    margin:0;
-    margin-bottom:27px;
-    font-weight: bold;
-    font-size: inherit;
-    color: #F56A3F;
+  margin: 0;
+  margin-bottom: 27px;
+  font-weight: bold;
+  font-size: inherit;
+  color: #f56a3f;
 }
