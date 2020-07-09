@@ -16,7 +16,7 @@ const AddReviewForm = ({ reviews, addNewReview, history }) => {
     isMessageFieldDisabled: true,
   });
 
-  const [selectedStarsQuantity, setSelectedStarsQuantity] = useState(null);
+  const [selectedStarsQuantity, setSelectedStarsQuantity] = useState(0);
 
   const isFirstRender = useRef(true);
 
